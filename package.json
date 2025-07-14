@@ -2,7 +2,7 @@
   "name": "maax-seguimiento-de-pedidos",
   "private": true,
   "scripts": {
-    "build": "npx remix build",
+    "build": "node ./node_modules/@remix-run/dev/cli.js build",
     "dev": "shopify app dev",
     "config:link": "shopify app config link",
     "generate": "shopify app generate",
