@@ -1,9 +1,11 @@
-# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
-
-client_id = "2a6553cef73c7179d1d97ab9c5111f83"
+[app]
 name = "Maax - Seguimiento de pedidos"
 handle = "maax-seguimiento-de-pedidos"
-application_url = "https://shiny-zebra-pj6p69x7v569f49x-4040.app.github.dev"
+client_id = "2a6553cef73c7179d1d97ab9c5111f83"
+client_secret = "8980ed13812139941d74355fdf42ff05"
+scopes = "read_orders,read_customers"
+redirect_url_whitelist = ["https://maax-shopify-track-app.onrender.com/api/auth/callback"]
+application_url = "https://maax-shopify-track-app.onrender.com"
 embedded = true
 
 [build]
@@ -22,11 +24,12 @@ api_version = "2025-07"
   uri = "/webhooks/app/scopes_update"
 
 [access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products" # ⚠️ OJO: esto no se está usando ahora
 
 [auth]
-redirect_urls = ["https://shiny-zebra-pj6p69x7v569f49x-4040.app.github.dev/auth/callback", "https://shiny-zebra-pj6p69x7v569f49x-4040.app.github.dev/auth/shopify/callback", "https://shiny-zebra-pj6p69x7v569f49x-4040.app.github.dev/api/auth/callback"]
+redirect_urls = [
+  "https://maax-shopify-track-app.onrender.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
